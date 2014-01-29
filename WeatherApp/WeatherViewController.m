@@ -10,6 +10,8 @@
 
 @interface WeatherViewController ()
 
+@property(nonatomic, readonly) NSString *openWeatherMapApiKey;
+
 @end
 
 @implementation WeatherViewController
@@ -26,13 +28,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    NSLog(@"%@", self.openWeatherMapApiKey);
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSString *)openWeatherMapApiKey
+{
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"OpenWeatherMap"];
 }
 
 @end
