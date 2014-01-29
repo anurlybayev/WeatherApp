@@ -10,6 +10,8 @@
 
 @implementation AppDelegate
 
+@synthesize currentConditionsCache = _currentConditionsCache;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
@@ -41,6 +43,14 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (NSMutableDictionary *)currentConditionsCache
+{
+    if (!_currentConditionsCache) {
+        _currentConditionsCache = [[NSMutableDictionary alloc] init];
+    }
+    return _currentConditionsCache;
 }
 
 @end
