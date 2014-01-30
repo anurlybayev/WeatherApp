@@ -67,6 +67,8 @@
 {
     NSDictionary *country = self.countries[indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CapitalCell" forIndexPath:indexPath];
+    cell.textLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
+    cell.detailTextLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
     cell.textLabel.text = country[@"capital"];
     cell.detailTextLabel.text = country[@"name"];
     
