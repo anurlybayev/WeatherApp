@@ -98,12 +98,17 @@
                                     <action selector="convertTemperatureToDifferentUnit:" destination="A0R-Yh-UsI" eventType="valueChanged" id="3Bh-I0-uV7"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUt-CX-z3I">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUt-CX-z3I">
                                 <rect key="frame" x="20" y="144" width="280" height="280"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="iyI-cm-h1a">
+                                <rect key="frame" x="142" y="266" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -112,12 +117,15 @@
                             <constraint firstItem="tUt-CX-z3I" firstAttribute="leading" secondItem="fy2-UN-ake" secondAttribute="leading" constant="20" symbolic="YES" id="KiF-yc-zcg"/>
                             <constraint firstAttribute="trailing" secondItem="tUt-CX-z3I" secondAttribute="trailing" constant="20" symbolic="YES" id="X6v-IY-6Ay"/>
                             <constraint firstItem="tUt-CX-z3I" firstAttribute="trailing" secondItem="eHw-Tr-A6w" secondAttribute="trailing" id="bEQ-nn-NnQ"/>
+                            <constraint firstAttribute="centerX" secondItem="iyI-cm-h1a" secondAttribute="centerX" id="gdJ-g0-nEQ"/>
                             <constraint firstItem="tUt-CX-z3I" firstAttribute="top" secondItem="zHk-In-dgy" secondAttribute="bottom" constant="80" id="hvb-gc-ldJ"/>
+                            <constraint firstAttribute="centerY" secondItem="iyI-cm-h1a" secondAttribute="centerY" id="nCH-QV-Wtt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bgh-SV-Dnd"/>
                     <connections>
                         <outlet property="currentTemperature" destination="tUt-CX-z3I" id="Wio-De-5Pa"/>
+                        <outlet property="spinner" destination="iyI-cm-h1a" id="OQw-T7-ssV"/>
                         <outlet property="temperatureUnits" destination="eHw-Tr-A6w" id="zs0-aS-Kk9"/>
                     </connections>
                 </viewController>

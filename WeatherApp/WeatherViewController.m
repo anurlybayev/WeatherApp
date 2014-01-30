@@ -25,6 +25,7 @@ NSString *const CURRENT_CONDITIONS_KEY = @"CurrentConditions";
 
 @property (weak, nonatomic) IBOutlet UILabel *currentTemperature;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *temperatureUnits;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @end
 
 @implementation WeatherViewController
@@ -85,6 +86,8 @@ NSString *const CURRENT_CONDITIONS_KEY = @"CurrentConditions";
                               [self.country stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
                               self.openWeatherMapApiKey];
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:endPoint]];
+        [self.spinner startAnimating];
+        __weak typeof(self) wself = self;
         NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request
                                                                  completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                                      if (!error) {
@@ -95,11 +98,16 @@ NSString *const CURRENT_CONDITIONS_KEY = @"CurrentConditions";
                                                                          [json setObject:[NSDate date] forKey:FETCH_TIMESTAMP_KEY];
                                                                          
                                                                          dispatch_async(dispatch_get_main_queue(), ^{
-                                                                             self.currentConditions = json;
+                                                                             wself.currentConditions = json;
+                                                                             [wself.spinner stopAnimating];
                                                                          });
                                                                      } else {
-                                                                         NSLog(@"%@", [error localizedDescription]);
+                                                                         dispatch_async(dispatch_get_main_queue(), ^{
+                                                                             NSLog(@"%@", [error localizedDescription]);
+                                                                             [wself.spinner stopAnimating];
+                                                                         });
                                                                      }
+                                                                     
                                                                  }];
         [task resume];
     } else {
