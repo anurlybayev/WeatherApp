@@ -52,6 +52,7 @@
         WeatherViewController *wvc = (WeatherViewController *)segue.destinationViewController;
         wvc.country = country[@"name"];
         wvc.city = country[@"capital"];
+        wvc.title = country[@"capital"];
     }
 }
 

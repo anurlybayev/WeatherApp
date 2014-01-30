@@ -23,6 +23,8 @@ NSString *const CURRENT_CONDITIONS_KEY = @"CurrentConditions";
 
 @property(nonatomic, strong) NSURLSession *session;
 
+@property (weak, nonatomic) IBOutlet UILabel *currentTemperature;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *temperatureUnits;
 @end
 
 @implementation WeatherViewController
@@ -99,7 +101,12 @@ NSString *const CURRENT_CONDITIONS_KEY = @"CurrentConditions";
                                                                                                                                      options:NSJSONReadingMutableContainers
                                                                                                                                        error:&parseError];
                                                                          [json setObject:[NSDate date] forKey:FETCH_TIMESTAMP_KEY];
-                                                                         self.currentConditions = json;
+                                                                         
+                                                                         dispatch_async(dispatch_get_main_queue(), ^{
+                                                                             self.currentConditions = json;
+                                                                         });
+                                                                     } else {
+                                                                         NSLog(@"%@", [error localizedDescription]);
                                                                      }
                                                                  }];
         [task resume];
@@ -119,11 +126,27 @@ NSString *const CURRENT_CONDITIONS_KEY = @"CurrentConditions";
         [countryCache setObject:currentConditions forKey:city];
     }
     [self.appDel.currentConditionsCache setObject:countryCache forKey:self.country];
+    
+    [self convertTemperatureToDifferentUnit:self.temperatureUnits];
 }
 
 - (AppDelegate *)appDel
 {
     return [[UIApplication sharedApplication] delegate];
 }
+
+#pragma mark - IBActions
+
+- (IBAction)convertTemperatureToDifferentUnit:(UISegmentedControl *)sender
+{
+    CGFloat temp = [self.currentConditions[@"main"][@"temp"] floatValue];
+    if (sender.selectedSegmentIndex == 0) {
+        self.currentTemperature.text = [NSString stringWithFormat:@"%.f ℃", temp];
+    } else {
+        temp = temp * 1.8 + 32;
+        self.currentTemperature.text = [NSString stringWithFormat:@"%.f ℉", temp];
+    }
+}
+
 
 @end
