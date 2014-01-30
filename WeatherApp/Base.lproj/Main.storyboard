@@ -84,9 +84,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eHw-Tr-A6w">
-                                <rect key="frame" x="177" y="78" width="123" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eHw-Tr-A6w">
+                                <rect key="frame" x="177" y="520" width="123" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="1a6-7Q-dI8"/>
+                                </constraints>
                                 <segments>
                                     <segment title="℃"/>
                                     <segment title="℉"/>
@@ -95,14 +98,22 @@
                                     <action selector="convertTemperatureToDifferentUnit:" destination="A0R-Yh-UsI" eventType="valueChanged" id="3Bh-I0-uV7"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUt-CX-z3I">
-                                <rect key="frame" x="20" y="81" width="149" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUt-CX-z3I">
+                                <rect key="frame" x="20" y="144" width="280" height="280"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="eHw-Tr-A6w" secondAttribute="bottom" constant="20" symbolic="YES" id="77M-RA-wCf"/>
+                            <constraint firstItem="tUt-CX-z3I" firstAttribute="centerY" secondItem="fy2-UN-ake" secondAttribute="centerY" id="9Lq-i3-xFD"/>
+                            <constraint firstItem="tUt-CX-z3I" firstAttribute="leading" secondItem="fy2-UN-ake" secondAttribute="leading" constant="20" symbolic="YES" id="KiF-yc-zcg"/>
+                            <constraint firstAttribute="trailing" secondItem="tUt-CX-z3I" secondAttribute="trailing" constant="20" symbolic="YES" id="X6v-IY-6Ay"/>
+                            <constraint firstItem="tUt-CX-z3I" firstAttribute="trailing" secondItem="eHw-Tr-A6w" secondAttribute="trailing" id="bEQ-nn-NnQ"/>
+                            <constraint firstItem="tUt-CX-z3I" firstAttribute="top" secondItem="zHk-In-dgy" secondAttribute="bottom" constant="80" id="hvb-gc-ldJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bgh-SV-Dnd"/>
                     <connections>

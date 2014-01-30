@@ -29,18 +29,10 @@ NSString *const CURRENT_CONDITIONS_KEY = @"CurrentConditions";
 
 @implementation WeatherViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.currentTemperature.font = [[UIFont preferredFontForTextStyle:UIFontTextStyleBody] fontWithSize:72.0];
     [self fetchCurrentConditions];
 }
 
@@ -119,15 +111,20 @@ NSString *const CURRENT_CONDITIONS_KEY = @"CurrentConditions";
 {
     _currentConditions = currentConditions;
     NSString *city = currentConditions[@"name"];
-    NSMutableDictionary *countryCache = [self.appDel.currentConditionsCache objectForKey:self.country];
-    if (!countryCache) {
-        countryCache = [NSMutableDictionary dictionaryWithObject:currentConditions forKey:city];
+    if (!city) {
+        self.currentTemperature.text = @"N/A";
+        self.temperatureUnits.enabled = NO;
     } else {
-        [countryCache setObject:currentConditions forKey:city];
+        NSMutableDictionary *countryCache = [self.appDel.currentConditionsCache objectForKey:self.country];
+        if (!countryCache) {
+            countryCache = [NSMutableDictionary dictionaryWithObject:currentConditions forKey:city];
+        } else {
+            [countryCache setObject:currentConditions forKey:city];
+        }
+        [self.appDel.currentConditionsCache setObject:countryCache forKey:self.country];
+        
+        [self convertTemperatureToDifferentUnit:self.temperatureUnits];
     }
-    [self.appDel.currentConditionsCache setObject:countryCache forKey:self.country];
-    
-    [self convertTemperatureToDifferentUnit:self.temperatureUnits];
 }
 
 - (AppDelegate *)appDel
