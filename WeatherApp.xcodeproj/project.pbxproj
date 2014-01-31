@@ -23,6 +23,13 @@
 		750D0152189992460085C01E /* WeatherAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 750D0151189992460085C01E /* WeatherAppTests.m */; };
 		750D015D1899932B0085C01E /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 750D015C1899932B0085C01E /* WeatherViewController.m */; };
 		750D015F189993A30085C01E /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 750D015E189993A30085C01E /* countries.json */; };
+		75FC79A0189C1CF800E3EC85 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FC7991189C1CF800E3EC85 /* NSData+Base64.m */; };
+		75FC79A1189C1CF800E3EC85 /* OAuth+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FC7993189C1CF800E3EC85 /* OAuth+Additions.m */; };
+		75FC79A2189C1CF800E3EC85 /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FC7995189C1CF800E3EC85 /* OAuthCore.m */; };
+		75FC79A3189C1CF800E3EC85 /* PXAPIHelper+Auth.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FC7999189C1CF800E3EC85 /* PXAPIHelper+Auth.m */; };
+		75FC79A4189C1CF800E3EC85 /* PXAPIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FC799B189C1CF800E3EC85 /* PXAPIHelper.m */; };
+		75FC79A5189C1CF800E3EC85 /* PXRequest+Creation.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FC799D189C1CF800E3EC85 /* PXRequest+Creation.m */; };
+		75FC79A6189C1CF800E3EC85 /* PXRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FC799F189C1CF800E3EC85 /* PXRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +65,22 @@
 		750D015B1899932B0085C01E /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
 		750D015C1899932B0085C01E /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
 		750D015E189993A30085C01E /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		75FC7990189C1CF800E3EC85 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		75FC7991189C1CF800E3EC85 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		75FC7992189C1CF800E3EC85 /* OAuth+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OAuth+Additions.h"; sourceTree = "<group>"; };
+		75FC7993189C1CF800E3EC85 /* OAuth+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OAuth+Additions.m"; sourceTree = "<group>"; };
+		75FC7994189C1CF800E3EC85 /* OAuthCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthCore.h; sourceTree = "<group>"; };
+		75FC7995189C1CF800E3EC85 /* OAuthCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthCore.m; sourceTree = "<group>"; };
+		75FC7996189C1CF800E3EC85 /* PXAPI-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PXAPI-Prefix.pch"; sourceTree = "<group>"; };
+		75FC7997189C1CF800E3EC85 /* PXAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXAPI.h; sourceTree = "<group>"; };
+		75FC7998189C1CF800E3EC85 /* PXAPIHelper+Auth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PXAPIHelper+Auth.h"; sourceTree = "<group>"; };
+		75FC7999189C1CF800E3EC85 /* PXAPIHelper+Auth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PXAPIHelper+Auth.m"; sourceTree = "<group>"; };
+		75FC799A189C1CF800E3EC85 /* PXAPIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXAPIHelper.h; sourceTree = "<group>"; };
+		75FC799B189C1CF800E3EC85 /* PXAPIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXAPIHelper.m; sourceTree = "<group>"; };
+		75FC799C189C1CF800E3EC85 /* PXRequest+Creation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PXRequest+Creation.h"; sourceTree = "<group>"; };
+		75FC799D189C1CF800E3EC85 /* PXRequest+Creation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PXRequest+Creation.m"; sourceTree = "<group>"; };
+		75FC799E189C1CF800E3EC85 /* PXRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXRequest.h; sourceTree = "<group>"; };
+		75FC799F189C1CF800E3EC85 /* PXRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +147,7 @@
 				750D013C189992460085C01E /* ViewController.m */,
 				750D015B1899932B0085C01E /* WeatherViewController.h */,
 				750D015C1899932B0085C01E /* WeatherViewController.m */,
+				75FC798E189C1CF800E3EC85 /* PXAPI */,
 				750D013E189992460085C01E /* Images.xcassets */,
 				750D012D189992460085C01E /* Supporting Files */,
 			);
@@ -158,6 +182,37 @@
 				750D014E189992460085C01E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		75FC798E189C1CF800E3EC85 /* PXAPI */ = {
+			isa = PBXGroup;
+			children = (
+				75FC798F189C1CF800E3EC85 /* ABOAuthCore */,
+				75FC7996189C1CF800E3EC85 /* PXAPI-Prefix.pch */,
+				75FC7997189C1CF800E3EC85 /* PXAPI.h */,
+				75FC7998189C1CF800E3EC85 /* PXAPIHelper+Auth.h */,
+				75FC7999189C1CF800E3EC85 /* PXAPIHelper+Auth.m */,
+				75FC799A189C1CF800E3EC85 /* PXAPIHelper.h */,
+				75FC799B189C1CF800E3EC85 /* PXAPIHelper.m */,
+				75FC799C189C1CF800E3EC85 /* PXRequest+Creation.h */,
+				75FC799D189C1CF800E3EC85 /* PXRequest+Creation.m */,
+				75FC799E189C1CF800E3EC85 /* PXRequest.h */,
+				75FC799F189C1CF800E3EC85 /* PXRequest.m */,
+			);
+			path = PXAPI;
+			sourceTree = "<group>";
+		};
+		75FC798F189C1CF800E3EC85 /* ABOAuthCore */ = {
+			isa = PBXGroup;
+			children = (
+				75FC7990189C1CF800E3EC85 /* NSData+Base64.h */,
+				75FC7991189C1CF800E3EC85 /* NSData+Base64.m */,
+				75FC7992189C1CF800E3EC85 /* OAuth+Additions.h */,
+				75FC7993189C1CF800E3EC85 /* OAuth+Additions.m */,
+				75FC7994189C1CF800E3EC85 /* OAuthCore.h */,
+				75FC7995189C1CF800E3EC85 /* OAuthCore.m */,
+			);
+			path = ABOAuthCore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +314,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				750D013D189992460085C01E /* ViewController.m in Sources */,
+				75FC79A4189C1CF800E3EC85 /* PXAPIHelper.m in Sources */,
+				75FC79A1189C1CF800E3EC85 /* OAuth+Additions.m in Sources */,
 				750D015D1899932B0085C01E /* WeatherViewController.m in Sources */,
+				75FC79A6189C1CF800E3EC85 /* PXRequest.m in Sources */,
+				75FC79A0189C1CF800E3EC85 /* NSData+Base64.m in Sources */,
+				75FC79A3189C1CF800E3EC85 /* PXAPIHelper+Auth.m in Sources */,
+				75FC79A5189C1CF800E3EC85 /* PXRequest+Creation.m in Sources */,
+				75FC79A2189C1CF800E3EC85 /* OAuthCore.m in Sources */,
 				750D0137189992460085C01E /* AppDelegate.m in Sources */,
 				750D0133189992460085C01E /* main.m in Sources */,
 			);
@@ -470,6 +532,7 @@
 				750D0157189992460085C01E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		750D0158189992460085C01E /* Build configuration list for PBXNativeTarget "WeatherAppTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +541,7 @@
 				750D015A189992460085C01E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

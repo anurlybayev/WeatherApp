@@ -8,6 +8,7 @@
 
 #import "WeatherViewController.h"
 #import "AppDelegate.h"
+#import "PXAPI.h"
 
 NSString *const FETCH_TIMESTAMP_KEY = @"FetchTimestamp";
 NSString *const CURRENT_CONDITIONS_KEY = @"CurrentConditions";
@@ -23,6 +24,7 @@ NSString *const CURRENT_CONDITIONS_KEY = @"CurrentConditions";
 
 @property(nonatomic, strong) NSURLSession *session;
 
+@property (weak, nonatomic) IBOutlet UIImageView *wallpaper;
 @property (weak, nonatomic) IBOutlet UILabel *currentTemperature;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *temperatureUnits;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
@@ -33,8 +35,12 @@ NSString *const CURRENT_CONDITIONS_KEY = @"CurrentConditions";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.currentTemperature.font = [[UIFont preferredFontForTextStyle:UIFontTextStyleBody] fontWithSize:72.0];
+    self.currentTemperature.font = [[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline] fontWithSize:72.0];
+    self.currentTemperature.textColor = [UIColor whiteColor];
+    self.wallpaper.backgroundColor = [UIColor lightGrayColor];
+    [self.spinner stopAnimating];
     [self fetchCurrentConditions];
+    [self fetchWallpaper];
 }
 
 - (void)didReceiveMemoryWarning
@@ -113,6 +119,37 @@ NSString *const CURRENT_CONDITIONS_KEY = @"CurrentConditions";
     } else {
         self.currentConditions = [[self.appDel.currentConditionsCache objectForKey:self.country] objectForKey:self.city];
     }
+}
+
+- (void)fetchWallpaper
+{
+    __weak typeof(self) wself = self;
+    [PXRequest setConsumerKey:@"" consumerSecret:@""];
+    
+    [PXRequest requestForSearchTerm:[self.city stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
+                          searchTag:@"urban"
+                          searchGeo:nil
+                               page:1
+                     resultsPerPage:20
+                         photoSizes:PXPhotoModelSizeThumbnail
+                             except:PXPhotoModelCategoryUncategorized
+                         completion:^(NSDictionary *results, NSError *error) {
+                             NSLog(@"%@", results);
+                             NSArray *photos = [results objectForKey:@"photos"];
+                             if (photos && [photos count]) {
+                                 NSInteger photoIndex = arc4random() % [photos count];
+                                 NSDictionary *photo = [photos objectAtIndex:photoIndex];
+                                 NSString *imageURL = [[photo objectForKey:@"image_url"] lastObject];
+                                 if (imageURL) {
+                                     UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
+                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                         wself.wallpaper.image = img;
+                                         
+                                     });
+                                 }
+                             }
+                         }];
+
 }
 
 - (void)setCurrentConditions:(NSDictionary *)currentConditions
