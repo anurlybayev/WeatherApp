@@ -30,6 +30,7 @@
 		75FC79A4189C1CF800E3EC85 /* PXAPIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FC799B189C1CF800E3EC85 /* PXAPIHelper.m */; };
 		75FC79A5189C1CF800E3EC85 /* PXRequest+Creation.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FC799D189C1CF800E3EC85 /* PXRequest+Creation.m */; };
 		75FC79A6189C1CF800E3EC85 /* PXRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FC799F189C1CF800E3EC85 /* PXRequest.m */; };
+		75FC79AA189C2F4B00E3EC85 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FC79A9189C2F4B00E3EC85 /* UIImage+ImageEffects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		75FC799D189C1CF800E3EC85 /* PXRequest+Creation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PXRequest+Creation.m"; sourceTree = "<group>"; };
 		75FC799E189C1CF800E3EC85 /* PXRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXRequest.h; sourceTree = "<group>"; };
 		75FC799F189C1CF800E3EC85 /* PXRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXRequest.m; sourceTree = "<group>"; };
+		75FC79A8189C2F4B00E3EC85 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		75FC79A9189C2F4B00E3EC85 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				750D013C189992460085C01E /* ViewController.m */,
 				750D015B1899932B0085C01E /* WeatherViewController.h */,
 				750D015C1899932B0085C01E /* WeatherViewController.m */,
+				75FC79A8189C2F4B00E3EC85 /* UIImage+ImageEffects.h */,
+				75FC79A9189C2F4B00E3EC85 /* UIImage+ImageEffects.m */,
 				75FC798E189C1CF800E3EC85 /* PXAPI */,
 				750D013E189992460085C01E /* Images.xcassets */,
 				750D012D189992460085C01E /* Supporting Files */,
@@ -321,6 +326,7 @@
 				75FC79A0189C1CF800E3EC85 /* NSData+Base64.m in Sources */,
 				75FC79A3189C1CF800E3EC85 /* PXAPIHelper+Auth.m in Sources */,
 				75FC79A5189C1CF800E3EC85 /* PXRequest+Creation.m in Sources */,
+				75FC79AA189C2F4B00E3EC85 /* UIImage+ImageEffects.m in Sources */,
 				75FC79A2189C1CF800E3EC85 /* OAuthCore.m in Sources */,
 				750D0137189992460085C01E /* AppDelegate.m in Sources */,
 				750D0133189992460085C01E /* main.m in Sources */,

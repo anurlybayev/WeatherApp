@@ -9,6 +9,7 @@
 #import "WeatherViewController.h"
 #import "AppDelegate.h"
 #import "PXAPI.h"
+#import "UIImage+ImageEffects.h"
 
 NSString *const FETCH_TIMESTAMP_KEY = @"FetchTimestamp";
 NSString *const CURRENT_CONDITIONS_KEY = @"CurrentConditions";
@@ -143,7 +144,10 @@ NSString *const CURRENT_CONDITIONS_KEY = @"CurrentConditions";
                                  if (imageURL) {
                                      UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
                                      dispatch_async(dispatch_get_main_queue(), ^{
-                                         wself.wallpaper.image = img;
+                                         wself.wallpaper.image = [img applyBlurWithRadius:3
+                                                                                tintColor:[UIColor colorWithWhite:1.0 alpha:0.1]
+                                                                    saturationDeltaFactor:1.8
+                                                                                maskImage:nil];
                                          
                                      });
                                  }
