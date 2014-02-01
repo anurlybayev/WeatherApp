@@ -127,7 +127,9 @@ NSString *const CURRENT_CONDITIONS_KEY = @"CurrentConditions";
     __weak typeof(self) wself = self;
     [PXRequest setConsumerKey:@"" consumerSecret:@""];
     
-    [PXRequest requestForSearchTerm:[self.city stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
+    NSString *term = [self.city length] ? self.city : self.country;
+    
+    [PXRequest requestForSearchTerm:[term stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
                           searchTag:@"urban"
                           searchGeo:nil
                                page:1
